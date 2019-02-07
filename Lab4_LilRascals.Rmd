@@ -1,6 +1,6 @@
 ---
 title: "Lab4_LilRascals"
-author: "Matthew Copeland"
+authors: "Matthew Copeland, Kelsey McKenna, James Burke, Shreeya Basrur"
 date: "February 7, 2019"
 output: html_document
 ---
@@ -11,3 +11,85 @@ babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Scien
 babies <- rename(babies, bwtoz = `bwt/oz`) #renaming `bwt/oz` because the "/" sign requires special care
 ```
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+ggplot(data = babies)+
+  geom_point(aes(x = id, y = date))
+
+## What is the relationship between general health and smoking controlling for gender? 
+* This is an interesting question because the answer could help us to find a better understand of how smoking impacts one's general health and well being, specifically looking at males and females. This is important because knowing this may help to discourage people from continuing to smoke or starting smoking, and encourage those who want to improve their general well being to stop smoking. 
+
+## Team Plot 
+
+```{r}
+ggplot(data = cdc) +
+  geom_bar(mapping = aes(x = gender, fill= genhlth)) +
+  facet_grid(smoke100~genhlth)+
+  ggtitle('General Health vs. Smoking')
+```
+
+#### Our Findings:
+
+* Our team saw that for both men and women there were more people with excellent health that were non-smokers than those who did smoke. More people had poor health if they did smoke than those who did not. In general, more men smoked than women.
+
+#### Our Conclusion:
+
+* The data shows that smoking leads to a decrease in the general health levels of both genders. For both males and females, there was an increase in the number of reported fair and poor general health levels among smokers. Among non-smokers there was an increase in the number of reported excellent health levels. 
+
+#### Our Reccomendation: 
+
+* Our reccomendation is that we should continue to analyze more data specifcally trying to learn more about the problem of nicotine addiction in general which would be interesting with the rise of e-cigs and vapes. There should be more legislation put in place to help us to combat the negative impact of smoking.
+
+## Individual Plots 
+
+#### Kelsey's PLot
+
+```{r}
+ggplot(data = cdc, mapping = aes(x = genhlth, y = weight, color=genhlth)) + 
+  geom_boxplot() +
+  geom_boxplot() +
+  coord_flip()
+```
+
+Kelsey's Findings:   
+
+
+
+#### James' Plot 
+```{r}
+library(tidyverse)
+babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Science-repo/master/babies2a.dat")
+ggplot(data = babies) +
+geom_bar(mapping = aes(x = inc, fill = as.factor(smoke)), position = position_dodge()) 
+
+```
+
+James's Findings:
+
+
+
+#### Matt's PLot
+
+```{r}
+ggplot(data = cdc, mapping = aes(x = genhlth, y = weight, color=genhlth)) + 
+  geom_boxplot() +
+  geom_boxplot() +
+  coord_flip()
+```
+
+Matt's Findings: 
+
+#### Shreeya's PLot
+
+```{r}
+ggplot(data = cdc, mapping = aes(x = genhlth, y = weight, color=genhlth)) + 
+  geom_boxplot() +
+  geom_boxplot() +
+  coord_flip()
+```
+
+Shreeya's Findings: 
