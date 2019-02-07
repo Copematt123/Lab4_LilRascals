@@ -15,7 +15,7 @@ babies <- rename(babies, bwtoz = `bwt/oz`) #renaming `bwt/oz` because the "/" si
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
+## Team Plots
 ```{r}
 ggplot(data = babies)+
   geom_point(aes(x = id, y = date))
@@ -23,13 +23,22 @@ ggplot(data = babies)+
 ## What is the relationship between general health and smoking controlling for gender? 
 * This is an interesting question because the answer could help us to find a better understand of how smoking impacts one's general health and well being, specifically looking at males and females. This is important because knowing this may help to discourage people from continuing to smoke or starting smoking, and encourage those who want to improve their general well being to stop smoking. 
 
-## Team Plot 
 
 ```{r}
 ggplot(data = cdc) +
   geom_bar(mapping = aes(x = gender, fill= genhlth)) +
   facet_grid(smoke100~genhlth)+
   ggtitle('General Health vs. Smoking')
+```
+## What is the relationship between babies weight and whether the mother smokes accounting for a mother's weight during the pregnancy. 
+* This is an interesting question because the answer could help us to find a better understand of how smoking impacts one's general health and well being. This is important because knowing this may help to discourage people from continuing to smoke or starting smoking, and encourage those who want to improve their general well being to stop smoking. 
+
+## Team Plot 
+
+```{r}
+ggplot(data = babies) + 
+  geom_jitter(mapping = aes(x = mpregwt, y = bwtoz, color = smoke))+
+  geom_smooth(mapping = aes(x = mpregwt, y = bwtoz, color = smoke))
 ```
 
 #### Our Findings:
@@ -49,14 +58,16 @@ ggplot(data = cdc) +
 #### Kelsey's PLot
 
 ```{r}
-ggplot(data = cdc, mapping = aes(x = genhlth, y = weight, color=genhlth)) + 
-  geom_boxplot() +
-  geom_boxplot() +
-  coord_flip()
+
+
+ggplot(data = babies) + 
+  geom_point(mapping = aes(x = number, y = bwtoz, color = smoke))+
+  xlab("Number of Cigarettes Smoked") + 
+  ylab("Weight of Baby")
+
 ```
 
-Kelsey's Findings:   
-
+Kelsey's Findings: I found that there is very little relationship between how many cigarettes smoked a day and a babies birthweight. I found that there are more higher weighted babies as outliers if the mother doesn't smoke.
 
 
 #### James' Plot 
@@ -93,3 +104,6 @@ ggplot(data = cdc, mapping = aes(x = genhlth, y = weight, color=genhlth)) +
 ```
 
 Shreeya's Findings: 
+
+### Team Summary
+* I, Kelsey McKenna, created a plot that showed the relationship between the number of cigarettes smoked per day and the child's birthweight. I thought this was an important question and I had predicted that the more a mother smoked, the worse her health and the lower the birthweight of the child. It is clearly not the case and there is little relationship between the two. I used the geom_point function. I added a color function with the variable smoke to highlight if the mother said she smoked or not. I found that there are more higher weighted babies as outliers if the mother doesn't smoke. I added labels to make the plot easier to read.
