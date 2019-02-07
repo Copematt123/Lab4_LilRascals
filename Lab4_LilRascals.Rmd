@@ -86,10 +86,9 @@ James's Findings:
 #### Matt's PLot
 
 ```{r}
-ggplot(data = cdc, mapping = aes(x = genhlth, y = weight, color=genhlth)) + 
-  geom_boxplot() +
-  geom_boxplot() +
-  coord_flip()
+
+
+
 ```
 
 Matt's Findings: 
