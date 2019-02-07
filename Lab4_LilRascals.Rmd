@@ -17,8 +17,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Team Plots
 ```{r}
-ggplot(data = babies)+
-  geom_point(aes(x = id, y = date))
+ggplot(data = babies) +
+    geom_bar(mapping=aes(x=number, fill = as.factor(Premature)),position = "dodge") + 
+    ggtitle("Number of Births vs. Number of Cigarettes Smoked Per Day") +
+    xlab("Cigarettes Smoked per Day") +
+    ylab("Number of Births")+
+    scale_fill_discrete(name = "Premature births (0 = not premature, 1 = premature")
 ```
 ## What is the relationship between babies weight and whether the mother smokes accounting for a mother's weight during the pregnancy. 
 * This is an interesting question because the answer could help us to find a better understand of how smoking impacts one's children. This is important because knowing this may help to discourage people from continuing to smoke or starting smoking, and encourage those who want to improve their babies well-being. Especially, in regards to mothers and how it impacts their children.
@@ -32,14 +36,17 @@ ggplot(data = babies) +
 ```
 
 #### Our Findings:
+Our findings were that generally the population of women who smoked the most had the fewest babies, and that the proportion of premature to mature  born babies was roughly the same for women who didn't smoke and women who smoked multiple cigarettes a day historically. 
 
 * Our team saw that from our plot that women who had a heigher pregnancy weight, had babies with a higher weight which makes sense. Also, we can tell from this plot that babies with mothers who smoked were less likely to have a higher weight and more likely to be a lower weight. Therefore, this could indicate that babies of mothers who smoke are less healthy. 
 
 #### Our Conclusion:
+The data shows that women who smoked more cigarettes did have a larger proportion of premature babies, although women who smoked more in general had fewer babies overall.  
 
 * The data shows that smoking of a mother, leads to a less normal baby weight. This could mean that these babies are less healthy or are more likely to be underweight. 
 
 #### Our Reccomendation: 
+Our recommendation is that further study and analysis is required to produce a more confident conclusion on whether smoking during a pregnancy affects if a baby is born prematurely. However, smoking is definitively injurious to health and this data does show an increased proportion of premature babies born to women who have historically smoked several cigarettes. In general, women should be advised that smoking can affect the birth of a baby and should plan accordingly while further study continues. 
 
 * Our reccomendation is that we should continue to analyze more data specifcally trying to learn more about the problem of mothers smoking during or before pregnancy. There should be more legislation put in place to help us to combat the negative impact of smoking especially in regards to mothers. 
 
@@ -86,13 +93,18 @@ Matt's Findings:
 #### Shreeya's PLot
 
 ```{r}
-ggplot(data = cdc, mapping = aes(x = genhlth, y = weight, color=genhlth)) + 
-  geom_boxplot() +
-  geom_boxplot() +
-  coord_flip()
+ggplot(data = babies) +
+  geom_density(mapping=aes(x=mrace), fill = "yellow", linetype="dashed", size=1) +
+  geom_vline(aes(xintercept=mean(mrace)))+
+  ggtitle("Density of Race Among Mothers") +
+    xlab("Mother's Race(1-5 is white, 6 = mexican, 7 = black, 8 = asian, 9 = mixed)") +
+    ylab("Density")
 ```
 
-Shreeya's Findings: 
+Shreeya's Findings: The vertical black line represents the mean of the race distribution among mothers. This graph shows that a large portion of the participants in this study were white, which could be a confounding variable for the main question. 
+
+Shreeya's Summary: I, Shreeya Basrur,created a density plot to analyse the distribution of race demographics for mothers in this study. I filled in the density plot yellow for visibility, and added the mean line to clarify the general density plot. I also added axis titles as well as an informative title to be easier to read. This plot was created with the geom_density function with aesthetic modifiers that filled in the plot yellow and added the dashed line. Geom_vline was the function I used to create the mean line for this plot. 
+
 
 ### Team Summary
 * I, Kelsey McKenna, created a plot that showed the relationship between the number of cigarettes smoked per day and the child's birthweight. I thought this was an important question and I had predicted that the more a mother smoked, the worse her health and the lower the birthweight of the child. It is clearly not the case and there is little relationship between the two. I used the geom_point function. I added a color function with the variable smoke to highlight if the mother said she smoked or not. I found that there are more higher weighted babies as outliers if the mother doesn't smoke. I added labels to make the plot easier to read.
