@@ -19,21 +19,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 ggplot(data = babies)+
   geom_point(aes(x = id, y = date))
-
-## What is the relationship between general health and smoking controlling for gender? 
-* This is an interesting question because the answer could help us to find a better understand of how smoking impacts one's general health and well being, specifically looking at males and females. This is important because knowing this may help to discourage people from continuing to smoke or starting smoking, and encourage those who want to improve their general well being to stop smoking. 
-
-
-```{r}
-ggplot(data = cdc) +
-  geom_bar(mapping = aes(x = gender, fill= genhlth)) +
-  facet_grid(smoke100~genhlth)+
-  ggtitle('General Health vs. Smoking')
 ```
 ## What is the relationship between babies weight and whether the mother smokes accounting for a mother's weight during the pregnancy. 
-* This is an interesting question because the answer could help us to find a better understand of how smoking impacts one's general health and well being. This is important because knowing this may help to discourage people from continuing to smoke or starting smoking, and encourage those who want to improve their general well being to stop smoking. 
+* This is an interesting question because the answer could help us to find a better understand of how smoking impacts one's children. This is important because knowing this may help to discourage people from continuing to smoke or starting smoking, and encourage those who want to improve their babies well-being. Especially, in regards to mothers and how it impacts their children.
 
-## Team Plot 
+
 
 ```{r}
 ggplot(data = babies) + 
@@ -43,15 +33,15 @@ ggplot(data = babies) +
 
 #### Our Findings:
 
-* Our team saw that for both men and women there were more people with excellent health that were non-smokers than those who did smoke. More people had poor health if they did smoke than those who did not. In general, more men smoked than women.
+* Our team saw that from our plot that women who had a heigher pregnancy weight, had babies with a higher weight which makes sense. Also, we can tell from this plot that babies with mothers who smoked were less likely to have a higher weight and more likely to be a lower weight. Therefore, this could indicate that babies of mothers who smoke are less healthy. 
 
 #### Our Conclusion:
 
-* The data shows that smoking leads to a decrease in the general health levels of both genders. For both males and females, there was an increase in the number of reported fair and poor general health levels among smokers. Among non-smokers there was an increase in the number of reported excellent health levels. 
+* The data shows that smoking of a mother, leads to a less normal baby weight. This could mean that these babies are less healthy or are more likely to be underweight. 
 
 #### Our Reccomendation: 
 
-* Our reccomendation is that we should continue to analyze more data specifcally trying to learn more about the problem of nicotine addiction in general which would be interesting with the rise of e-cigs and vapes. There should be more legislation put in place to help us to combat the negative impact of smoking.
+* Our reccomendation is that we should continue to analyze more data specifcally trying to learn more about the problem of mothers smoking during or before pregnancy. There should be more legislation put in place to help us to combat the negative impact of smoking especially in regards to mothers. 
 
 ## Individual Plots 
 
