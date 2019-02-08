@@ -95,6 +95,8 @@ James' Findings: I found that for the most part a families income does not affec
 ## Matt's PLot
 
 ```{r}
+babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Science-repo/master/babies2a.dat")
+babies <- rename(babies, bwtoz = `bwt/oz`) #renaming `bwt/oz` because the "/" sign requires special care
 ggplot(data = babies)+
   geom_jitter(aes(x = parity, y = bwtoz, color = as.factor(marital)),size = 2, na.rm = TRUE)+
   scale_fill_discrete(name = "marrige staus")+
