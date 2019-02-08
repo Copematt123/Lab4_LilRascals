@@ -87,9 +87,9 @@ ggplot(data = babies) +
 NA = smoked before)")
 
 ```
-James's Question: Does income affect the proportion of those who smoke, and those who do not smoke?
+James' Question: Does income affect the proportion of those who smoke, and those who do not smoke?
 
-James's Findings: I found that for the most part a families income does not affect whether or not they smoke. For most income groups the proportion of people who never smoke is greater than that of the proportion of people who smoke.
+James' Findings: I found that for the most part a families income does not affect whether or not they smoke. For most income groups the proportion of people who never smoke is greater than that of the proportion of people who smoke.
 
 
 ## Matt's PLot
@@ -113,6 +113,7 @@ ggplot(data = babies) +
     xlab("Mother's Race(1-5 is white, 6 = mexican, 7 = black, 8 = asian, 9 = mixed)") +
     ylab("Density")
 ```
+Shreeya's Question: What is the distribution of race in the data?
 
 Shreeya's Findings: The vertical black line represents the mean of the race distribution among mothers. This graph shows that a large portion of the participants in this study were white, which could be a confounding variable for the main question. 
 
