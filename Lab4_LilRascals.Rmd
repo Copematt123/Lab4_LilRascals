@@ -70,6 +70,7 @@ ggplot(data = babies) +
   ylab("Weight of Baby")
 
 ```
+Kelsey's Question: How does whether a mother smokes affect her child's birthweight?
 
 Kelsey's Findings: I found that there is very little relationship between how many cigarettes smoked a day and a babies birthweight. I found that there are more higher weighted babies as outliers if the mother doesn't smoke.
 
