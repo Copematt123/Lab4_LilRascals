@@ -81,13 +81,14 @@ babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Scien
 ggplot(data = babies) +
   geom_bar(mapping = aes(x = inc, fill = as.factor(smoke)), position = position_dodge()) +
   xlab("Income")+
-  scale_fill_discrete(name = "      Smoking Status
-(0 = never, 1 = smokes)")
+  scale_fill_discrete(name = "    Smoking Status
+(0 = never, 1 = smokes,
+NA = smoked before)")
 
 ```
+James's Question: Does income affect the proportion of those who smoke, and those who do not smoke?
 
 James's Findings: I found that for the most part a families income does not affect whether or not they smoke. For most income groups the proportion of people who never smoke is greater than that of the proportion of people who smoke.
-
 
 
 ## Matt's PLot
@@ -99,6 +100,7 @@ James's Findings: I found that for the most part a families income does not affe
 ```
 
 Matt's Findings: 
+
 
 ## Shreeya's PLot
 
@@ -118,3 +120,5 @@ Shreeya's Summary: I, Shreeya Basrur,created a density plot to analyse the distr
 
 #### Team Summary
 * I, Kelsey McKenna, created a plot that showed the relationship between the number of cigarettes smoked per day and the child's birthweight. I thought this was an important question and I had predicted that the more a mother smoked, the worse her health and the lower the birthweight of the child. It is clearly not the case and there is little relationship between the two. I used the geom_point function. I added a color function with the variable smoke to highlight if the mother said she smoked or not. I found that there are more higher weighted babies as outliers if the mother doesn't smoke. I added labels to make the plot easier to read.
+
+* I, James Burke, wrote the first question (smoking vs premature babies) and its importance in warning mothers of the affect smoking can have on their newborns. I also helped to create and format the Number of Births vs. Number of Cigarettes Smoked Per Day plot. For my individual plot I created a bar chart that compares the proportion of smokers vs non smokers, to they income grouping. I made incomne the x axis and then had separate bars in each income grouping, for peoples smoking status. Having these bars side by side makes it easy to visualize the proportion. I did this using the fill aestetic and by making the smokers variable a factor, then I used position dodge to separate the bars. I also changed the x axis label along with the legend title.
