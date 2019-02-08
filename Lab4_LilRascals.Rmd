@@ -81,13 +81,14 @@ babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Scien
 ggplot(data = babies) +
   geom_bar(mapping = aes(x = inc, fill = as.factor(smoke)), position = position_dodge()) +
   xlab("Income")+
-  scale_fill_discrete(name = "      Smoking Status
-(0 = never, 1 = smokes)")
+  scale_fill_discrete(name = "    Smoking Status
+(0 = never, 1 = smokes,
+NA = smoked before)")
 
 ```
+James's Question: Does income affect the proportion of those who smoke, and those who do not smoke?
 
 James's Findings: I found that for the most part a families income does not affect whether or not they smoke. For most income groups the proportion of people who never smoke is greater than that of the proportion of people who smoke.
-
 
 
 ## Matt's PLot
@@ -99,6 +100,7 @@ James's Findings: I found that for the most part a families income does not affe
 ```
 
 Matt's Findings: 
+
 
 ## Shreeya's PLot
 
@@ -115,6 +117,7 @@ Shreeya's Findings: The vertical black line represents the mean of the race dist
 
 
 #### Team Summary
+
 * I, Kelsey McKenna, created a plot that showed the relationship between the number of cigarettes smoked per day and the child's birthweight. I thought this was an important question and I had predicted that the more a mother smoked, the worse her health and the lower the birthweight of the child. It is clearly not the case and there is little relationship between the two. I used the geom_point function. I added a color function with the variable smoke to highlight if the mother said she smoked or not. I found that there are more higher weighted babies as outliers if the mother doesn't smoke. I added labels to make the plot easier to read. I also created the team plot number 1 and the question and analysis for our first team plot. 
 
 * I, Shreeya Basrur,created a density plot to analyse the distribution of race demographics for mothers in this study. I filled in the density plot yellow for visibility, and added the mean line to clarify the general density plot. I also added axis titles as well as an informative title to be easier to read. This plot was created with the geom_density function with aesthetic modifiers that filled in the plot yellow and added the dashed line. Geom_vline was the function I used to create the mean line for this plot. I also created team plot two in order to answer our second question. 
